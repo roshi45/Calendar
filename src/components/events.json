@@ -1,0 +1,5 @@
+[
+  { "date": "2025-06-24", "title": "Team Meeting", "time": "10:00", "duration": "1h" },
+  { "date": "2025-06-24", "title": "Doctor Visit", "time": "14:00", "duration": "30m" },
+  { "date": "2025-06-26", "title": "Client Demo", "time": "09:00", "duration": "2h" }
+]

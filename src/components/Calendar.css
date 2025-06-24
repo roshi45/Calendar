@@ -1,0 +1,248 @@
+.calendar-container {
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid #151313;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  background: #083068;
+  align-items: center;
+  background-color: #0a3062; /* matches your blue theme */
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.calendar-header h2 {
+  font-size: 1.2rem;
+}
+.calendar-header button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.calendar-weekdays, .calendar-days {
+
+  padding-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+.calendar-weekdays {
+  font-weight: bold;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #ddd;
+}
+.calendar-days {
+  min-height: 10px;
+}
+.calendar-day {
+  padding: 0.2rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.calendar-day:hover {
+  background: #149aac;
+}
+.booked {
+  background: #ffb3b3;
+  color: #a00;
+  cursor: not-allowed;
+}
+.past {
+  color: #999;
+  cursor: not-allowed;
+}
+.time-picker {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.time-picker input {
+  padding: 0.3rem;
+  border-radius: 4px;
+  background: #083068;
+  border: 1px solid #ccc;
+}
+.past {
+  color: #072b3d;
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-header select {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #072b3d;
+}
+.month-year {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.month-year-selector {
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: #083068;
+}
+
+.month-year-selector select, 
+.month-year-selector button {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.today {
+  border: 2px solid #ff9800;
+  border-radius: 50%;
+  background: #ffeacc;
+}
+.events-list {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.event-item {
+  background: #2196f3;
+  color: white;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* Existing styles up here... */
+
+.calendar-day {
+  position: relative;
+  min-height: 50px;
+  min-width: 50px;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.calendar-day:hover {
+  background: #4782ab;
+}
+
+.calendar-day.booked {
+  background: #ffe5e5;
+  border-color: #ff9999;
+}
+
+.calendar-day.past {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.events-list {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.event-chip {
+  background: #007bff;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.add-event-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.add-event-btn:hover {
+  background: #218838;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background:#083068;
+  padding: 1.5rem;
+  border-radius: 8px;
+  min-width: 280px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  border: 1px solid #060606;
+  border-radius: 4px;
+  background-color: white;
+  color: #000;
+}
+
+.modal-content button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.modal-content button:hover {
+  background: #0056b3;
+}
